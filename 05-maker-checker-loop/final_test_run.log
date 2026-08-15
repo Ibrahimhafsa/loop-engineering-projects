@@ -1,0 +1,206 @@
+
+
++==========================================================+
+|                                                          |
+|        PROJECT 5: MAKER-CHECKER LOOP DEMONSTRATION       |
+|             Learning the Maker-Checker Pattern           |
+|                                                          |
++==========================================================+
+
+
+############################################################
+#  SCENARIO 1: PASS FLOW (Succeeds Immediately)            #
+############################################################
+
+In this scenario, the Maker creates a good summary that passes
+the Checker's validation on the first attempt.
+
+============================================================
+STARTING Task 1: Write Project Summary
+============================================================
+User Request: Create a Python calculator that can add, subtract, multiply, and divide
+
+
+--- Attempt #1 ---
+Step 1: Maker is creating result...
+============================================================
+MAKER RESULT
+============================================================
+Original Request: Create a Python calculator that can add, subtract, multiply, and divide
+Summary Created: Python calculator tool
+Feedback Considered: False
+Timestamp: 2026-08-15T21:38:48.238820
+============================================================
+
+Step 2: Checker is reviewing result...
+============================================================
+CHECKER REVIEW (Attempt #1)
+============================================================
+Summary Reviewed: Python calculator tool
+
+Verdict: FAIL
+
+Conditions Checked:
+  [PASS] - Summary must be at least 20 characters long
+  [FAIL] - Summary must have at least 5 words
+  [FAIL] - Summary must contain an action verb (performs, provides, creates, etc.)
+
+Feedback for Improvement:
+- Summary must have at least 5 words
+- Summary must contain an action verb (performs, provides, creates, etc.)
+
+============================================================
+
+[FAILED] on attempt #1
+Maker will try to improve (attempt #2 of 3)
+
+[Progress saved to progress.md]
+
+--- Attempt #2 ---
+Step 1: Maker is creating result...
+============================================================
+MAKER RESULT
+============================================================
+Original Request: Create a Python calculator that can add, subtract, multiply, and divide
+Summary Created: A Python tool that performs basic arithmetic operations including addition, subtraction, multiplication, and division with clear input/output.
+Feedback Considered: True
+Timestamp: 2026-08-15T21:38:50.979663
+============================================================
+
+Step 2: Checker is reviewing result...
+============================================================
+CHECKER REVIEW (Attempt #2)
+============================================================
+Summary Reviewed: A Python tool that performs basic arithmetic operations including addition, subtraction, multiplication, and division with clear input/output.
+
+Verdict: PASS
+
+Conditions Checked:
+  [PASS] - Summary must be at least 20 characters long
+  [PASS] - Summary must have at least 5 words
+  [PASS] - Summary must contain an action verb (performs, provides, creates, etc.)
+
+============================================================
+
+[SUCCESS] on attempt #2!
+
+[Progress saved to progress.md]
+
+------------------------------------------------------------
+SCENARIO 1 RESULT:
+  Status: PASSED
+  Total Attempts: 2
+  Verdict: PASS
+------------------------------------------------------------
+
+
+
+############################################################
+#  SCENARIO 2: FAIL -> FIX -> RECHECK FLOW                 #
+############################################################
+
+In this scenario, the Maker creates a brief summary that fails
+the Checker's validation. The Maker then improves it (using feedback
+from the Checker) and it passes on the second attempt.
+
+============================================================
+STARTING Task 2: Write Feature List
+============================================================
+User Request: List features for a web scraper tool
+
+
+--- Attempt #1 ---
+Step 1: Maker is creating result...
+============================================================
+MAKER RESULT
+============================================================
+Original Request: List features for a web scraper tool
+Summary Created: Web scraper data tool
+Feedback Considered: False
+Timestamp: 2026-08-15T21:38:51.026931
+============================================================
+
+Step 2: Checker is reviewing result...
+============================================================
+CHECKER REVIEW (Attempt #1)
+============================================================
+Summary Reviewed: Web scraper data tool
+
+Verdict: FAIL
+
+Conditions Checked:
+  [PASS] - Summary must be at least 20 characters long
+  [FAIL] - Summary must have at least 5 words
+  [FAIL] - Summary must contain an action verb (performs, provides, creates, etc.)
+
+Feedback for Improvement:
+- Summary must have at least 5 words
+- Summary must contain an action verb (performs, provides, creates, etc.)
+
+============================================================
+
+[FAILED] on attempt #1
+Maker will try to improve (attempt #2 of 3)
+
+[Progress saved to progress.md]
+
+--- Attempt #2 ---
+Step 1: Maker is creating result...
+============================================================
+MAKER RESULT
+============================================================
+Original Request: List features for a web scraper tool
+Summary Created: A web scraper that extracts and parses data from websites with support for multiple formats and storage options.
+Feedback Considered: True
+Timestamp: 2026-08-15T21:38:51.028932
+============================================================
+
+Step 2: Checker is reviewing result...
+============================================================
+CHECKER REVIEW (Attempt #2)
+============================================================
+Summary Reviewed: A web scraper that extracts and parses data from websites with support for multiple formats and storage options.
+
+Verdict: PASS
+
+Conditions Checked:
+  [PASS] - Summary must be at least 20 characters long
+  [PASS] - Summary must have at least 5 words
+  [PASS] - Summary must contain an action verb (performs, provides, creates, etc.)
+
+============================================================
+
+[SUCCESS] on attempt #2!
+
+[Progress saved to progress.md]
+
+------------------------------------------------------------
+SCENARIO 2 RESULT:
+  Status: PASSED
+  Total Attempts: 2
+  Verdict: PASS
+------------------------------------------------------------
+
+============================================================
+LOOP SUMMARY
+============================================================
+Max Attempts per Task: 3
+============================================================
+
+============================================================
+PROJECT EXECUTION COMPLETE
+============================================================
+
+Task 1 (Calculator): PASSED in 2 attempt(s)
+Task 2 (Scraper): PASSED in 2 attempt(s)
+
+All results saved to: progress.md
+============================================================
+
+Key Observations:
+  [OK] Maker creates summaries
+  [OK] Checker validates against success conditions
+  [OK] If FAIL, loop allows Maker to improve and retry
+  [OK] Progress is saved to progress.md (the spine)
+  [OK] Loop continues until PASS or max attempts reached
+============================================================
