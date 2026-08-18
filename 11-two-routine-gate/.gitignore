@@ -1,0 +1,47 @@
+# Secrets and tokens - NEVER commit these to Git
+.routine_b_token
+*.token
+.env
+.env.local
+secrets/
+
+# State files - local execution state
+state.json
+progress.md
+
+# Draft and result files - temporary execution artifacts
+draft_latest.md
+result_approved.md
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
