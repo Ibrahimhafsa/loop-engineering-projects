@@ -72,3 +72,53 @@ This file is the **spine** - it remembers all health checks across runs.
 - **Overall Score**: 100/100
 - **Checker Verdict**: PASS
 - **Checker Feedback**: All conditions met
+
+## TEST DATA - PLANTED REPEATED FAILURE EXAMPLES
+
+The following entries are **deliberately planted test cases** for Project 12 (Dreaming Loop).
+They represent realistic but fabricated scenarios to test the dreaming loop's ability to detect repeated failures.
+These entries should NOT be treated as real historical data.
+
+### Check #3 (TEST DATA)
+- **Date/Time**: 2026-08-17T09:30:15.123456
+- **Health Status**: FAIL
+- **Failure Type**: Missing validation check
+- **Error Message**: Validation step skipped - checker_feedback field was empty
+- **Impact**: health_score incorrectly calculated as 100 when should be 85
+- **Correction Applied**: Added validation to require non-empty checker_feedback
+- **Files Count**: 5
+- **Overall Score**: 85/100
+- **Checker Verdict**: FAIL - Missing validation
+- **Checker Feedback**: Validation step was skipped, checker_feedback required but not provided
+- **Note**: TEST DATA - Repeated failure pattern #1
+
+### Check #4 (TEST DATA)
+- **Date/Time**: 2026-08-18T10:45:22.654321
+- **Health Status**: PASS (after correction)
+- **Files Count**: 5
+- **Python Lines**: 390
+- **Overall Score**: 100/100
+- **Checker Verdict**: PASS
+- **Checker Feedback**: All conditions met with validation check in place
+
+### Check #5 (TEST DATA - SECOND OCCURRENCE OF SAME FAILURE)
+- **Date/Time**: 2026-08-19T08:20:30.987654
+- **Health Status**: FAIL
+- **Failure Type**: Missing validation check
+- **Error Message**: Validation step skipped - checker_feedback field was empty
+- **Impact**: health_score incorrectly calculated as 100 when should be 80
+- **Correction Applied**: Added validation to require non-empty checker_feedback
+- **Files Count**: 4
+- **Overall Score**: 80/100
+- **Checker Verdict**: FAIL - Missing validation
+- **Checker Feedback**: Validation check was missing again, checker_feedback required
+- **Note**: TEST DATA - Repeated failure pattern #1 (SECOND OCCURRENCE)
+
+### Check #6 (TEST DATA)
+- **Date/Time**: 2026-08-20T11:15:45.246813
+- **Health Status**: PASS (after correction)
+- **Files Count**: 5
+- **Python Lines**: 390
+- **Overall Score**: 100/100
+- **Checker Verdict**: PASS
+- **Checker Feedback**: All conditions met with validation check restored
